@@ -1,3 +1,5 @@
+2024 MARCH
+
 typescript , scss, react, redux, native(app), responsively
 
 ---
@@ -9,5 +11,5 @@ typescript , scss, react, redux, native(app), responsively
 X
 
 - home
-  - header
+  - header (상단 메인탭)
   -
