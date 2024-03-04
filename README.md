@@ -1,6 +1,9 @@
 2024 MARCH
 
-typescript , scss, react, redux, native(app), responsively
+typescript , scss, react, redux
+
+Three js - 3D
+Native - app
 
 ---
 
@@ -10,6 +13,5 @@ typescript , scss, react, redux, native(app), responsively
 
 X
 
-- home
-  - header (상단 메인탭)
-  -
+- up/down slide transition
+- about single product - using threeJS 3D
