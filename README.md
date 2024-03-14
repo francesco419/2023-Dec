@@ -30,5 +30,5 @@ Plan
 Layout
 
 - 심플 간단.
-- 페이지 전환 애니매이션을 통한 부드러운 모션 연출.
+- 페이지 전환 애니매이션을 통한 부드러운 모션 연출. = react-transition-group => npm i @types/react-transition-group
 - 흰색(베이지) 바탕에 기본적인 선을 사용. (흑백)
