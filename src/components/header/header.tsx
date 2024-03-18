@@ -1,8 +1,12 @@
+import { TextTag } from '../common/font/fontTag';
+
 export default function Header() {
   return (
     <div
       style={{
-        padding: '0 30px'
+        position: 'fixed',
+        top: '0',
+        width: '100%'
       }}
     >
       <div
@@ -11,16 +15,13 @@ export default function Header() {
           justifyContent: 'space-between',
           height: '30px',
           borderBottom: '2px solid gray',
-          paddingRight: '300px',
-          paddingBottom: '10px'
+          padding: '0 300px 10px 30px'
         }}
       >
-        <p>24/03/14</p>
-        <p>LEE SANG HYEON</p>
-        <p>THROUGH OUT THE WORK</p>
+        <TextTag $fontsize='medium'>24/03/14</TextTag>
+        <TextTag $fontsize='medium'>LEE SANG HYEON</TextTag>
+        <TextTag $fontsize='medium'>THROUGH OUT THE WORK</TextTag>
       </div>
     </div>
   );
 }
-
-//FONT FAMILY : PRETENDARD
