@@ -1,32 +1,32 @@
 import styled from 'styled-components';
 import { css } from 'styled-components';
+import { BoldType } from '../../../assets/types/types';
 
-type TextType = {
+interface TextType extends BoldType {
   $fontsize: string;
-  $bold?: boolean;
-};
+}
 
-export const TextTag = styled.p<TextType>`
-  font-family: Mabry Pro Reg;
-  color: #522a28;
+export const Text = styled.p<TextType>`
+  font-family: ${(props) => props.theme.font.Reg};
+  color: ${(props) => props.theme.color.fontcolor};
   ${(props) =>
     props.$fontsize === 'small' &&
     css`
-      font-size: 12px;
+      font-size: 1rem;
     `}
   ${(props) =>
     props.$fontsize === 'medium' &&
     css`
-      font-size: 16px;
+      font-size: 1.5rem;
     `}
   ${(props) =>
     props.$fontsize === 'big' &&
     css`
-      font-size: 20px;
+      font-size: 2rem;
     `}
     ${(props) =>
     props.$bold === true &&
     css`
-      font-weight: 1000;
+      font-family: ${(props) => props.theme.font.Bold};
     `}
 `;

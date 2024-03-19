@@ -1,29 +1,41 @@
 import '../../App.scss';
 import styled, { css } from 'styled-components';
-import { TextTag } from '../common/font/fontTag';
+import { Text } from '../common/font/fontTag';
+import { now } from '../../function/date';
 
 const HeaderContainer = styled.div`
   position: fixed;
   top: 0;
   width: 100%;
+  border-bottom: 2px solid ${(props) => props.theme.color.fontcolor};
+  z-index-99;
 `;
 
 const HeaderInner = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 30px;
-  border-bottom: 2px solid ${(props) => props.theme.fontcolor};
-  padding: 0 300px 10px 30px;
+  padding: 1rem 300px 0 0;
+  width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  p {
+    margin: 0;
+  }
 `;
 
-const headerText = ['24/03/14', 'LEE SANG HYEON', 'THROUGH OUT THE WORK'];
+const headerText = [now, 'LEE SANG HYEON', 'THROUGH OUT THE WORK'];
 
 export default function Header() {
   return (
     <HeaderContainer>
       <HeaderInner>
         {headerText.map((o) => {
-          return <TextTag $fontsize='medium'>{o}</TextTag>;
+          return (
+            <Text $fontsize='small' $bold key={o}>
+              {o}
+            </Text>
+          );
         })}
       </HeaderInner>
     </HeaderContainer>
