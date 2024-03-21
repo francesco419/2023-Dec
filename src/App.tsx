@@ -3,14 +3,14 @@ import FirstViewPage from './page/front/firstViewPage';
 import StartPage from './page/front/startPage';
 import './App.scss';
 import { AnimatePresence } from 'framer-motion';
-import Header from './components/header/headerContainer';
+import Navbar from './components/header/headerContainer';
 
 export default function App() {
   const location = useLocation();
   return (
     <>
-      <Header />
-      <AnimatePresence>
+        <Navbar />
+      <AnimatePresence mode='wait'>
         <Routes location={location} key={location.pathname}>
           <Route
             path={`${process.env.PUBLIC_URL}/`}
