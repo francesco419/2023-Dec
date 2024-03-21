@@ -19,7 +19,7 @@ export default function FirstViewPage() {
     <Container
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ y: -window.innerHeight }}
+      exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
     >
       <div>
@@ -30,7 +30,7 @@ export default function FirstViewPage() {
           Lee Sang Hyeon<br></br>Frontend Developer
         </TitleH3Tag>
       </div>
-      <div style={{ padding: '0 0 200px 0', alignSelf: 'self-end' }}>
+      <div style={{ padding: '0 0 7% 0', alignSelf: 'self-end', margin:' 0 0 0 auto'}}>
         <ButtonTypeA onClick={() => {}}>
           <Link to={'/riri'}>FURTHER MORE</Link>
         </ButtonTypeA>

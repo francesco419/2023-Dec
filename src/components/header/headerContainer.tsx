@@ -8,7 +8,7 @@ const HeaderContainer = styled.div`
   top: 0;
   width: 100%;
   border-bottom: 2px solid ${(props) => props.theme.color.fontcolor};
-  z-index-99;
+  z-index:99;
 `;
 
 const HeaderInner = styled.div`
@@ -26,7 +26,7 @@ const HeaderInner = styled.div`
 
 const headerText = [now, 'LEE SANG HYEON', 'THROUGH OUT THE WORK'];
 
-export default function Header() {
+export default function Navbar() {
   return (
     <HeaderContainer>
       <HeaderInner>
