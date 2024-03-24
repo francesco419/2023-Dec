@@ -4,6 +4,7 @@ import PictureBox  from '../../components/picturebox/pictureBox';
 import styled from 'styled-components';
 import { TitleH2Tag } from '../../components/common/font/titleComp';
 import { ButtonOnlyText } from '../../components/common/button/type2/buttonTypeTwoLarge';
+import { useState } from 'react';
 
 const SecCon = styled.div`
 display:flex;
@@ -15,22 +16,55 @@ width:100%;
 const tempData = [
   {
     img:'https://picsum.photos/320/200',
-    title:'Lorem',
-    text:'Lorem Picsum is good',
+    title:'Finedition',
+    text:'Travel Korea for Foreiner',
   },
   {
     img:'https://picsum.photos/320/200',
-    title:'Lorem',
-    text:'Lorem Picsum is good'
+    title:'BrainBomb',
+    text:'MindMap for Web'
   },
   {
     img:'https://picsum.photos/320/200',
-    title:'Lorem',
-    text:'Lorem Picsum is good'
+    title:'SNS',
+    text:'SoCial Network Service'
+  }
+]
+
+const tempData2 = [
+  {
+    img:'https://picsum.photos/320/200',
+    title:'TravelAway',
+    text:'',
+  },
+  {
+    img:'https://picsum.photos/320/200',
+    title:'Youtube',
+    text:''
+  },
+  {
+    img:'https://picsum.photos/320/200',
+    title:'SNS',
+    text:''
+  },
+  {
+    img:'https://picsum.photos/320/200',
+    title:'Portfolio',
+    text:''
   }
 ]
 
 export default function StartPage() {
+  const [forMore,setForMore]=useState<boolean>(false);
+
+  const changeForMore =()=>{
+    setForMore(forMore=>!forMore);
+  }
+
+  const forMoreHandler=()=>{
+    changeForMore();
+  }
+
   return (
     <Container
       initial={{ opacity:0 }}
@@ -43,11 +77,18 @@ export default function StartPage() {
       <SecCon>
         {tempData.map((o,index)=>{
           return(
-            <PictureBox type='big' img={o.img} text={o.text} title={o.title} key={o.title} delay={index*0.5}/>
+            <PictureBox type='medium' img={o.img} text={o.text} title={o.title} key={o.title} delay={index*0.5}/>
           )
         })}
       </SecCon>
-      <ButtonOnlyText text='For More'/>
+      {!forMore && <ButtonOnlyText onClick={forMoreHandler} text='For More'/>}
+      {forMore && <div style={!forMore ? {display:'flex'} : {display:'flex',margin:'40px 0 0'}}>
+        {tempData2.map((o,index)=>{
+          return(
+            <PictureBox type='small' img={o.img} text={o.text} title={o.title} key={o.title} delay={index*0.5}/>
+          )
+        })}
+      </div>}
     </div>
     </Container>
   );
