@@ -30,7 +30,13 @@ export default function FirstViewPage() {
           Lee Sang Hyeon<br></br>Frontend Developer
         </TitleH3Tag>
       </div>
-      <div style={{ padding: '0 0 7% 0', alignSelf: 'self-end', margin:' 0 0 0 auto'}}>
+      <div
+        style={{
+          padding: '0 0 7% 0',
+          alignSelf: 'self-end',
+          margin: ' 0 0 0 auto'
+        }}
+      >
         <ButtonTypeA onClick={() => {}}>
           <Link to={'/riri'}>FURTHER MORE</Link>
         </ButtonTypeA>
@@ -38,11 +44,3 @@ export default function FirstViewPage() {
     </Container>
   );
 }
-
-/*         <button
-          onClick={() => {
-            nav('/riri');
-          }}
-        >
-          RIRIRIRI
-        </button> */
