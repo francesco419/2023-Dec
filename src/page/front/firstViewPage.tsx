@@ -1,15 +1,12 @@
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Container } from '../common/container';
 import {
   TitleH1Tag,
-  TitleH2Tag,
   TitleH3Tag
 } from '../../components/common/font/titleComp';
 import { Link } from 'react-router-dom';
 import {
   ButtonTypeA,
-  ButtonTypeB
 } from '../../components/common/button/type1/buttonTypeOneLarge';
 
 export default function FirstViewPage() {
