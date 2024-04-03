@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { TitleH2Tag } from '../../components/common/font/titleComp';
 import { ButtonOnlyText } from '../../components/common/button/type2/buttonTypeTwoLarge';
 import { useState } from 'react';
+import { LinkedButton } from '../../components/common/button/link/linkButton';
 
 const SecCon = styled.div`
   display: flex;
@@ -96,19 +97,17 @@ export default function StartPage() {
             style={
               !forMore
                 ? { display: 'flex' }
-                : { display: 'flex', margin: '40px 0 0' }
+                : {
+                    display: 'flex',
+                    margin: '100px 0 0',
+                    justifyContent: 'center',
+                    gap: '100px'
+                  }
             }
           >
             {tempData2.map((o, index) => {
               return (
-                <PictureBox
-                  type='small'
-                  img={o.img}
-                  text={o.text}
-                  title={o.title}
-                  key={o.title}
-                  delay={index * 0.5}
-                />
+                <LinkedButton toPage={o.title} toLink={o.title}></LinkedButton>
               );
             })}
           </div>

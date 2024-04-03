@@ -22,9 +22,11 @@ ${(props) =>
       width: 250px;
       height: 250px;
     `}
-transition: transform 0.5s;
+    filter:contrast(60%);
+  transition: transform 0.5s, filter 0.5s;
   &:hover {
     transform: translateY(-20px);
+    filter: contrast(100%);
   }
   margin: 0 auto;
 `;
