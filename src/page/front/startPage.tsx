@@ -4,8 +4,9 @@ import PictureBox from '../../components/picturebox/pictureBox';
 import styled from 'styled-components';
 import { TitleH2Tag } from '../../components/common/font/titleComp';
 import { ButtonOnlyText } from '../../components/common/button/type2/buttonTypeTwoLarge';
-import { useState } from 'react';
+import { ReactHTMLElement, useState } from 'react';
 import { LinkedButton } from '../../components/common/button/link/linkButton';
+import ForMore from '../secondPage/forMore';
 
 const SecCon = styled.div`
   display: flex;
@@ -29,29 +30,6 @@ const tempData = [
     img: 'https://picsum.photos/320/200',
     title: 'SNS',
     text: 'SoCial Network Service'
-  }
-];
-
-const tempData2 = [
-  {
-    img: 'https://picsum.photos/320/200',
-    title: 'TravelAway',
-    text: ''
-  },
-  {
-    img: 'https://picsum.photos/320/200',
-    title: 'Youtube',
-    text: ''
-  },
-  {
-    img: 'https://picsum.photos/320/200',
-    title: 'SNS',
-    text: ''
-  },
-  {
-    img: 'https://picsum.photos/320/200',
-    title: 'Portfolio',
-    text: ''
   }
 ];
 
@@ -92,26 +70,7 @@ export default function StartPage() {
         {!forMore && (
           <ButtonOnlyText onClick={forMoreHandler} text='For More' />
         )}
-        {forMore && (
-          <div
-            style={
-              !forMore
-                ? { display: 'flex' }
-                : {
-                    display: 'flex',
-                    margin: '100px 0 0',
-                    justifyContent: 'center',
-                    gap: '100px'
-                  }
-            }
-          >
-            {tempData2.map((o, index) => {
-              return (
-                <LinkedButton toPage={o.title} toLink={o.title}></LinkedButton>
-              );
-            })}
-          </div>
-        )}
+        {forMore && <ForMore forMore={forMore} />}
       </div>
     </Container>
   );

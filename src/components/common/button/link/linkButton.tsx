@@ -6,9 +6,12 @@ import { motion } from 'framer-motion';
 interface LinkButtonType {
   toLink: string;
   toPage: string;
+  mouseOver: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => any;
 }
 
 export const LinkButton = styled.button`
+  box-sizing: border-box;
+  height: 40px;
   background-color: #00000000;
   border: 0;
   a {
@@ -23,14 +26,15 @@ export const LinkButton = styled.button`
   }
 `;
 
-export function LinkedButton({ toLink, toPage }: LinkButtonType) {
+export function LinkedButton({ toLink, toPage, mouseOver }: LinkButtonType) {
   return (
     <motion.div
+      style={{ zIndex: 99 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <LinkButton>
+      <LinkButton onMouseEnter={mouseOver}>
         <Link to={toLink}>{toPage}</Link>
       </LinkButton>
     </motion.div>
