@@ -1,13 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { Container } from '../common/container';
-import {
-  TitleH1Tag,
-  TitleH3Tag
-} from '../../components/common/font/titleComp';
+import { TitleH1Tag, TitleH3Tag } from '../../components/common/font/titleComp';
 import { Link } from 'react-router-dom';
-import {
-  ButtonTypeA,
-} from '../../components/common/button/type1/buttonTypeOneLarge';
+import { ButtonTypeA } from '../../components/common/button/type1/buttonTypeOneLarge';
 
 export default function FirstViewPage() {
   const nav = useNavigate();

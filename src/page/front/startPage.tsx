@@ -5,8 +5,6 @@ import styled from 'styled-components';
 import { TitleH2Tag } from '../../components/common/font/titleComp';
 import { ButtonOnlyText } from '../../components/common/button/type2/buttonTypeTwoLarge';
 import { useState } from 'react';
-import { ButtonTypeA } from '../../components/common/button/type1/buttonTypeOneLarge';
-import { Link } from 'react-router-dom';
 
 const SecCon = styled.div`
   display: flex;
@@ -30,29 +28,6 @@ const tempData = [
     img: 'https://picsum.photos/320/200',
     title: 'SNS',
     text: 'SoCial Network Service'
-  }
-];
-
-const tempData2 = [
-  {
-    img: 'https://picsum.photos/320/200',
-    title: 'TravelAway',
-    text: ''
-  },
-  {
-    img: 'https://picsum.photos/320/200',
-    title: 'Youtube',
-    text: ''
-  },
-  {
-    img: 'https://picsum.photos/320/200',
-    title: 'SNS',
-    text: ''
-  },
-  {
-    img: 'https://picsum.photos/320/200',
-    title: 'Portfolio',
-    text: ''
   }
 ];
 
@@ -115,9 +90,6 @@ export default function StartPage() {
             })}
           </div>
         )}
-      <ButtonTypeA onClick={() => {}} style={{float:'right'}}>
-          <Link to={'/playground'}>FURTHER MORE</Link>
-        </ButtonTypeA>
       </div>
     </Container>
   );
