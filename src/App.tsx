@@ -4,6 +4,7 @@ import StartPage from './page/front/startPage';
 import './App.scss';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/header/headerContainer';
+import PlayGround from './page/playground/playground';
 
 export default function App() {
   const location = useLocation();
@@ -17,6 +18,7 @@ export default function App() {
             element={<FirstViewPage />}
           />
           <Route path={`/riri`} element={<StartPage />} />
+          <Route path={`/playground`} element={<PlayGround />} />
         </Routes>
       </AnimatePresence>
     </>
