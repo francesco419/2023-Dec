@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { TitleH2Tag } from '../../components/common/font/titleComp';
 import { ButtonOnlyText } from '../../components/common/button/type2/buttonTypeTwoLarge';
 import { useState } from 'react';
+import ForMore from '../secondPage/forMore';
 
 const SecCon = styled.div`
   display: flex;
@@ -76,18 +77,7 @@ export default function StartPage() {
                 : { display: 'flex', margin: '40px 0 0' }
             }
           >
-            {tempData2.map((o, index) => {
-              return (
-                <PictureBox
-                  type='small'
-                  img={o.img}
-                  text={o.text}
-                  title={o.title}
-                  key={o.title}
-                  delay={index * 0.5}
-                />
-              );
-            })}
+            <ForMore forMore={forMore}/>
           </div>
         )}
       </div>

@@ -31,14 +31,14 @@ const tempData2 = [
 
 export default function ForMore({ forMore }: ForMoreType) {
   const [buttonBack, setButtonBack] = useState<number>(0);
-  const [buttonLength, setButtonLength] = useState<number>(0);
+  const [buttonlength, setButtonLength] = useState<number>(0);
 
   const getButtonBack = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     if (e.currentTarget) {
       const current = e.currentTarget;
-      if (current.offsetLeft && current.offsetWidth) {
+      if (current.offsetLeft!==null && current.offsetWidth!==null) {
         setButtonBack((buttonBack) => current.offsetLeft);
         setButtonLength((buttonLength) => current.offsetWidth);
       }
@@ -52,14 +52,14 @@ export default function ForMore({ forMore }: ForMoreType) {
           ? { display: 'flex' }
           : {
               display: 'flex',
-              margin: '100px 0 0',
+              margin: '100px auto 0',
               justifyContent: 'center',
               gap: '100px',
               position: 'relative'
             }
       }
     >
-      <ButtonBackMove buttonBack={buttonBack} buttonLength={buttonLength} />
+      <ButtonBackMove buttonBack={buttonBack} buttonLength={buttonlength} />
       {tempData2.map((o, index) => {
         return (
           <LinkedButton
