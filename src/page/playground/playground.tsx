@@ -13,3 +13,15 @@ export default function PlayGround(){
         </Container>
     )
 }
+//ideas
+/**
+ * 3d graphics (three.js)
+ * canvas
+ * React Native
+ * 
+ *--about--
+ - product = car, it
+ - mbti
+ - sharing service
+ - 
+ */
