@@ -6,6 +6,8 @@ import { TitleH2Tag } from '../../components/common/font/titleComp';
 import { ButtonOnlyText } from '../../components/common/button/type2/buttonTypeTwoLarge';
 import { useState } from 'react';
 import ForMore from '../secondPage/forMore';
+import { ButtonTypeA } from '../../components/common/button/type1/buttonTypeOneLarge';
+import { Link } from 'react-router-dom';
 
 const SecCon = styled.div`
   display: flex;
@@ -77,9 +79,12 @@ export default function StartPage() {
                 : { display: 'flex', margin: '40px 0 0' }
             }
           >
-            <ForMore forMore={forMore}/>
+            <ForMore forMore={forMore} />
           </div>
         )}
+        <ButtonTypeA onClick={() => {}}>
+          <Link to={'/project'}>FURTHER MORE</Link>
+        </ButtonTypeA>
       </div>
     </Container>
   );

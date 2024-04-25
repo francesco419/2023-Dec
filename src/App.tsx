@@ -5,12 +5,13 @@ import './App.scss';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/header/headerContainer';
 import PlayGround from './page/playground/playground';
+import Project from './page/project/project';
 
 export default function App() {
   const location = useLocation();
   return (
     <>
-        <Navbar />
+      <Navbar />
       <AnimatePresence mode='wait'>
         <Routes location={location} key={location.pathname}>
           <Route
@@ -19,6 +20,7 @@ export default function App() {
           />
           <Route path={`/riri`} element={<StartPage />} />
           <Route path={`/playground`} element={<PlayGround />} />
+          <Route path={`/project`} element={<Project />} />
         </Routes>
       </AnimatePresence>
     </>
