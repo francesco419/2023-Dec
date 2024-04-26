@@ -14,9 +14,7 @@ const Project = () => {
 
   return (
     <Container>
-      <AnimatePresence mode='wait'>
-        {<Img img={component[com]} change={com} />}
-      </AnimatePresence>
+      <Img img={component[com]} change={com} />
       <button
         onClick={() => {
           setCom((com) => com + 1);

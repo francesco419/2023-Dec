@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Typeimg {
   img: any;
@@ -6,17 +6,28 @@ interface Typeimg {
 }
 
 export const Img = ({ img, change }: Typeimg) => {
+  const variants = {
+    enter: { y: 500, opacity: 0 },
+    center: { y: 0, opacity: 1 },
+    exit: { y: -500, opacity: 0 }
+  };
+
   return (
-    <motion.div
-      key={change}
-      initial={{ y: 500, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -500, opacity: 0 }}
-      style={{ padding: '300px 0' }}
-    >
-      {img}
-    </motion.div>
+    <AnimatePresence mode='wait'>
+      <motion.div
+        key={change}
+        variants={variants}
+        initial='enter'
+        animate='center'
+        exit='exit'
+        transition={{ duration: 1 }}
+        style={{ padding: '300px 0' }}
+      >
+        {img}
+      </motion.div>
+    </AnimatePresence>
   );
+  // animatePresence의 'mode=wait'가 상위 컴포넌트에 지정되어있을 때는 작동하지 않다가, 같은 컴포넌트로 이동 후, 정상작동
 };
 
 /**
