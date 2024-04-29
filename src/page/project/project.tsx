@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container } from '../common/container';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Img } from './img';
-import ThreeJs from './threeJs';
+import { ThreeJs } from './threeJs';
 
 const Project = () => {
   const [change, setChange] = useState<number>(0);
@@ -23,7 +23,7 @@ const Project = () => {
       >
         next
       </button> */}
-      <ThreeJs />
+      <ThreeJs props={[0, 0, 0]} />
     </Container>
   );
 };
