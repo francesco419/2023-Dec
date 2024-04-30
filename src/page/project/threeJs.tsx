@@ -8,7 +8,7 @@ interface ModelType {
 }
 
 export const ThreeJs = ({ props }: ModelType) => {
-  const { scene, materials } = useGLTF('/benz-transformed.glb');
+  const { materials, nodes } = useGLTF('/benz-transformed.glb');
 
   const keys = {
     LEFT: 'ArrowLeft', //left arrow
@@ -18,24 +18,28 @@ export const ThreeJs = ({ props }: ModelType) => {
   };
 
   return (
-    <group {...props} dispose={null}>
-      <PerspectiveCamera
-        name='camera'
-        fov={40}
-        near={10}
-        far={1000}
-        position={[10, 0, 50]}
-      />
-      <pointLight
-        intensity={10}
-        position={[100, 50, 100]}
-        rotation={[-Math.PI / 2, 0, 0]}
-      />
-      <group position={[10, -5, 0]}>
-        <mesh geometry={scene} material={materials.metal} />
-        <mesh geometry={scene} material={materials.wood} />
-      </group>
-    </group>
+    <>
+      <Canvas>
+        <group {...props} dispose={null}>
+          <PerspectiveCamera
+            name='camera'
+            fov={40}
+            near={10}
+            far={1000}
+            position={[10, 0, 50]}
+          />
+          <pointLight
+            intensity={10}
+            position={[100, 50, 100]}
+            rotation={[-Math.PI / 2, 0, 0]}
+          />
+          <group position={[10, -5, 0]}>
+            <mesh material={materials.metal} />
+            <mesh material={materials.wood} />
+          </group>
+        </group>
+      </Canvas>
+    </>
   );
 };
 
