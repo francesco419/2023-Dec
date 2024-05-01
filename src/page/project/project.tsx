@@ -23,22 +23,15 @@ const Project = () => {
 
   return (
     <Container style={{ height: '1000px', width: '1000px', margin: '0 auto' }}>
-      {/* <Img img={component[com]} change={com} />
-      <button
-        onClick={() => {
-          setCom((com) => com + 1);
-        }}
-      >
-        next
-      </button> */}
-      {/* <ThreeJs props={[0, 0, 0]} /> */}
       <Canvas camera={{ fov: 75, near: 0.1, far: 1000, position: [2, 3, 3.5] }}>
         <Environment preset='apartment' />
         <OrbitControls
-          keys={keys}
           target={[0, 0, 0]}
           autoRotate
           autoRotateSpeed={1.0}
+          enableZoom={false}
+          maxPolarAngle={1.5}
+          minPolarAngle={0.9}
         />
         <ambientLight intensity={10} color={0xffffff} />
         <pointLight color={0xffffff} intensity={10} />

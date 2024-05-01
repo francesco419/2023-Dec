@@ -25,3 +25,8 @@ GLTFJSX fixes that
       - `<Environment preset='forest' />` (기본 preset을 사용 et. apartment,city,dawn,sunset)
 
 ### model, light, environment
+
+---
+
+camera position
+![alt text](download.jpg)
