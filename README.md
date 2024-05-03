@@ -29,4 +29,9 @@ GLTFJSX fixes that
 ---
 
 camera position
+
 ![alt text](download.jpg)
+
+---
+
+## learn ThreeJS Fundimental
