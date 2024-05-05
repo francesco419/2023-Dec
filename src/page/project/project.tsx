@@ -41,3 +41,8 @@ export default Project;
   };
 
  */
+
+//다수의 model컴포넌트 x
+
+//3d car selection tested
+//threejs fundimental study ***
