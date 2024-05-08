@@ -1,30 +1,31 @@
-import { useState } from 'react';
 import { Container } from '../common/container';
-import { Model } from './Benz';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment } from '@react-three/drei';
-//import { Model } from './Scene';
+import { ModelCoin } from './Bitcoin';
+import { Model } from './Benz';
+import { ModelCoinN } from './BitcoinN';
 
 const Project = () => {
   return (
-    <Container style={{ height: '500px', width: '1000px', margin: '0 auto' }}>
-      <Canvas camera={{ fov: 75, near: 0.1, far: 1000, position: [2, 3, 3.5] }}>
+    <Container style={{ height: '1000px', width: '1000px', margin: '0 auto' }}>
+      <Canvas>
         <Environment preset='apartment' />
         <OrbitControls
           autoRotate
-          autoRotateSpeed={1.0}
-          enableZoom={false}
-          maxPolarAngle={1.5}
-          minPolarAngle={0.9}
+          autoRotateSpeed={3.0}
+          /* enableZoom={false} */
+          /* maxPolarAngle={1.5}
+          minPolarAngle={0.9} */
         />
         <ambientLight intensity={10} color={0xffffff} />
+        {/*
         <pointLight color={0xffffff} intensity={10} />
         <directionalLight
           color={0xffffff}
           intensity={10}
-          position={[0, 1, 0]}
-        />
-        <Model />
+          position={[0, 0, 0]}
+        /> */}
+        <ModelCoinN />
       </Canvas>
     </Container>
   );

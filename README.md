@@ -8,7 +8,7 @@ GLTFJSX fixes that
   - gltf, glb 등의 3d모델을 jsx 변환
   - npx gltfjsx [location] [option]
 
-    - npx gltfjsx public/model.gltf --type --transform
+    - npx gltfjsx public/model.gltf --types --transform
 
     https://github.com/pmndrs/gltfjsx?tab=readme-ov-file
 
