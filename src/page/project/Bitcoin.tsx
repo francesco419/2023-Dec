@@ -49,16 +49,12 @@ export function ModelCoin(props: JSX.IntrinsicElements['group']) {
       <mesh
         geometry={nodes.Object_4.geometry}
         material={materials['Material.001']}
-        position={[4.439, 2.426, 1.481]}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={2.409}
       />
       <mesh
         geometry={nodes.Object_7.geometry}
         material={materials['Material.002']}
-        position={[4.373, 2.426, 1.481]}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={2.409}
       />
     </group>
   );

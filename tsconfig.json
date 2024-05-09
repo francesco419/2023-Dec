@@ -16,5 +16,9 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "src/page/project/Benz.tsx", "src/page/project/Scene.jsx"]
+  "include": [
+    "src",
+    "src/page/project/ex/Benz.tsx",
+    "src/page/project/Scene.jsx"
+  ]
 }

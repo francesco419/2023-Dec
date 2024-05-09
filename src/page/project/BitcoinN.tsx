@@ -47,7 +47,7 @@ export function ModelCoinN(props: JSX.IntrinsicElements['group']) {
       <mesh
         geometry={nodes.Cylinder002__0.geometry}
         material={materials['Scene_-_Root']}
-        position={[-3.489, 36.23, -11.294]}
+        scale={0.05}
       />
     </group>
   );
