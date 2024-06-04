@@ -25,6 +25,7 @@ const Project = () => {
         maxPolarAngle={1.5}
         minPolarAngle={1.5}
       />
+      <PerspectiveCamera makeDefault position={[0, 0, 10]} />
       <ambientLight intensity={10} color={0xffffff} />
       {/*
         <pointLight color={0xffffff} intensity={10} />
@@ -63,3 +64,6 @@ export default Project;
 
 //3d car selection tested
 //threejs fundimental study ***
+
+// 버튼 컨트롤에 따라 카메라의 위치 이동
+// * 부드러운 이동 + 이동 사이의 공간 고려
