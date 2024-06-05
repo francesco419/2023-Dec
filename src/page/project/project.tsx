@@ -10,22 +10,34 @@ import { Model } from './ex/Benz';
 import { ModelCoinN } from './BitcoinN';
 import { useState } from 'react';
 
+const AUTOROTATESPEED = 5;
+const ENABLEZOOM = false;
+const POLARANGLE = 1.5;
+
 const Project = () => {
   const [foo, setFoo] = useState<boolean>(true);
+
+  const pointEnter = () => {
+    setFoo((foo) => false);
+  };
+
+  const pointLeave = () => {
+    setFoo((foo) => true);
+  };
 
   return (
     <Canvas>
       <Environment preset='apartment' />
-      <OrbitControls
+      {/* <OrbitControls
         autoRotate={foo}
-        autoRotateSpeed={5}
+        autoRotateSpeed={AUTOROTATESPEED}
         enableDamping
         dampingFactor={foo ? 1 : 0.01}
-        enableZoom={false}
-        maxPolarAngle={1.5}
-        minPolarAngle={1.5}
-      />
-      <PerspectiveCamera makeDefault position={[0, 0, 10]} />
+        enableZoom={ENABLEZOOM}
+        maxPolarAngle={POLARANGLE}
+        minPolarAngle={POLARANGLE}
+      /> */}
+      <PerspectiveCamera position={[10, 0, 10]} rotation={[30, 20, 10]} />
       <ambientLight intensity={10} color={0xffffff} />
       {/*
         <pointLight color={0xffffff} intensity={10} />
@@ -34,16 +46,7 @@ const Project = () => {
           intensity={10}
           position={[0, 0, 0]}
         /> */}
-      <ModelCoin
-        onPointerEnter={() => {
-          setFoo((foo) => false);
-          console.log(11);
-        }}
-        onPointerLeave={() => {
-          setFoo((foo) => true);
-          console.log(11);
-        }}
-      />
+      <ModelCoin onPointerEnter={pointEnter} onPointerLeave={pointLeave} />
     </Canvas>
   );
 };
