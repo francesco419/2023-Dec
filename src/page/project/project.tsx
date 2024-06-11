@@ -5,8 +5,8 @@ import {
   Environment,
   PerspectiveCamera
 } from '@react-three/drei';
-import { ModelCoin } from './Bitcoin';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { CoinMemo } from './Bitcoin';
 
 const AUTOROTATESPEED = 5;
 const ENABLEZOOM = false;
@@ -37,13 +37,17 @@ const Project = () => {
   /**useFrame((state, delta) => {
     easing.damp3(state.camera.position, [state.pointer.x, 1 + state.pointer.y / 2, 8 + Math.atan(state.pointer.x * 2)], 0.3, delta)
     state.camera.lookAt(state.camera.position.x * 0.9, 0, -4)
+    //카메라 시점 변경 useFrame
+    //setState를 절대 하면 안됨.
+    // 계산식은 간단
+    // 루프에 의한 기능 사용 주의
   }) */
 
   const xyzHandler = (axis: string) => {
     let temp: XYZ_Type = xyz;
     if (axis === 'x') {
       temp.x = temp.x + 10;
-      console.log(temp);
+      console.log(temp.x);
       setXyz((xyz) => temp);
       return;
     }
@@ -89,7 +93,10 @@ const Project = () => {
           intensity={10}
           position={[0, 0, 0]}
         /> */}
-        <ModelCoin onPointerEnter={pointEnter} onPointerLeave={pointLeave} />
+        <CoinMemo
+          props={{ onPointerEnter: pointEnter, onPointerLeave: pointLeave }}
+          num={xyz.x}
+        />
       </Canvas>
       <div style={{ position: 'absolute', top: '100px', left: '100px' }}>
         <button onClick={() => xyzHandler('x')}>x</button>

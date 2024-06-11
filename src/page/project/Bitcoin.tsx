@@ -9,9 +9,11 @@ Title: Bitcoin
 */
 
 import * as THREE from 'three';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { GLTF } from 'three-stdlib';
+import { useFrame } from '@react-three/fiber';
+import { Group } from 'three';
 
 type ActionName = 'actionNameOne' | 'actionNameTwo';
 
@@ -40,10 +42,30 @@ type ContextType = Record<
   React.ForwardRefExoticComponent<JSX.IntrinsicElements['mesh']>
 >;
 
-export function ModelCoin(props: JSX.IntrinsicElements['group']) {
+type tempType = {
+  num: number;
+  props: JSX.IntrinsicElements['group'];
+};
+
+function ModelCoin({ props, num }: tempType) {
+  const groupRef = useRef<Group>(null);
+
+  useEffect(() => {
+    console.log(num);
+  }, [num]);
+
+  useFrame((state, delta) => {
+    console.log('useFrame' + num);
+    let rotation = groupRef.current?.rotation;
+    if (rotation) {
+      rotation.x = num;
+    }
+  });
+
   const { nodes, materials } = useGLTF(
     '/bitcoin-transformed.glb'
   ) as GLTFResult;
+
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -59,5 +81,7 @@ export function ModelCoin(props: JSX.IntrinsicElements['group']) {
     </group>
   );
 }
+
+export const CoinMemo = React.memo(ModelCoin);
 
 useGLTF.preload('/bitcoin-transformed.glb');
