@@ -56,11 +56,8 @@ function ModelCoin({ props, num }: tempType) {
   }, [ent]);
 
   useFrame((state, delta) => {
-    console.log('useFrame' + ent);
-    let rotation = groupRef.current?.rotation;
-    if (rotation) {
-      rotation.x = ent;
-    }
+    //easing.damp3(state.camera.position, [state.pointer.x, 1 + state.pointer.y / 2, 8 + Math.atan(state.pointer.x * 2)], 0.3, delta)
+    //maath = for math calculation
   });
 
   const { nodes, materials } = useGLTF(
