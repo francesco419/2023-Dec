@@ -35,3 +35,10 @@ camera position
 ---
 
 ## learn ThreeJS Fundimental
+
+2024-07
+
+add back SQL with using react query
+TailwindCSS
+React Testing Library
+++ mobile app
